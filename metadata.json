@@ -1,0 +1,8 @@
+{
+  "name": "MoyoWell",
+  "description": "Mental wellbeing screening, deterministic clinical staging, and compassionate care navigation companion.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

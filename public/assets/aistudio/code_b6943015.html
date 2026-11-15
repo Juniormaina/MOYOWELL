@@ -1,0 +1,646 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_standard" name="shell-type"/><title>MoyoWell — Mental Wellbeing Navigation</title><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&amp;family=Playfair+Display:ital,wght@0,500;0,600;1,500;1,600&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "on-tertiary-fixed": "#251a00", "background": "#f7faf5", "on-surface-variant": "#53433e", "on-tertiary-fixed-variant": "#5a4402", "secondary-fixed-dim": "#a6cfc1", "on-secondary-fixed-variant": "#274e43", "on-primary-container": "#fffbff", "secondary-fixed": "#c2ebdd", "primary-fixed-dim": "#ffb59d", "tertiary-fixed": "#ffdf98", "on-primary-fixed": "#390c00", "surface-variant": "#e0e3df", "primary-container": "#a8624a", "on-primary": "#ffffff", "surface-container-low": "#f1f4ef", "inverse-on-surface": "#eff2ed", "primary-fixed": "#ffdbd0", "outline": "#86736d", "inverse-primary": "#ffb59d", "secondary-container": "#bfe9da", "surface-container-lowest": "#ffffff", "on-background": "#191c1a", "secondary": "#3f665a", "on-secondary-container": "#446a5e", "primary": "#8b4a34", "outline-variant": "#d9c2bb", "surface-bright": "#f7faf5", "inverse-surface": "#2d312e", "surface-dim": "#d8dbd6", "on-primary-fixed-variant": "#713621", "error-container": "#ffdad6", "on-tertiary": "#ffffff", "surface-container-high": "#e6e9e4", "surface-container": "#ecefea", "on-error": "#ffffff", "surface-tint": "#8e4c36", "on-tertiary-container": "#fffbff", "tertiary": "#715918", "on-secondary": "#ffffff", "on-error-container": "#93000a", "on-secondary-fixed": "#002019", "error": "#ba1a1a", "tertiary-fixed-dim": "#e4c377", "surface-container-highest": "#e0e3df", "surface": "#f7faf5", "tertiary-container": "#8c712f", "on-surface": "#191c1a" }, "borderRadius": { "DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem" }, "spacing": { "margin": "3rem", "gutter": "1.5rem", "space-xl": "2.5rem", "space-lg": "1.5rem", "gutter-mobile": "1rem", "space-md": "1rem", "space-sm": "0.5rem", "space-xs": "0.25rem", "margin-mobile": "1.25rem" }, "fontFamily": { "headline-md": [ "Playfair Display" ], "label-md": [ "Manrope" ], "headline-lg-mobile": [ "Playfair Display" ], "body-md": [ "Manrope" ], "body-lg": [ "Manrope" ], "headline-lg": [ "Playfair Display" ], "label-sm": [ "Manrope" ], "display": [ "Playfair Display" ], "body-sm": [ "Manrope" ], "title-md": [ "Manrope" ], "title-lg": [ "Manrope" ], "headline-sm": [ "Playfair Display" ], "display-mobile": [ "Playfair Display" ] }, "fontSize": { "headline-md": [ "28px", { "lineHeight": "36px", "fontWeight": "500" } ], "label-md": [ "12px", { "lineHeight": "16px", "letterSpacing": "0.06em", "fontWeight": "600" } ], "headline-lg-mobile": [ "30px", { "lineHeight": "38px", "letterSpacing": "-0.01em", "fontWeight": "600" } ], "body-md": [ "15px", { "lineHeight": "24px", "fontWeight": "400" } ], "body-lg": [ "18px", { "lineHeight": "28px", "fontWeight": "400" } ], "headline-lg": [ "40px", { "lineHeight": "48px", "letterSpacing": "-0.015em", "fontWeight": "600" } ], "label-sm": [ "11px", { "lineHeight": "14px", "letterSpacing": "0.08em", "fontWeight": "600" } ], "display": [ "56px", { "lineHeight": "64px", "letterSpacing": "-0.02em", "fontWeight": "600" } ], "body-sm": [ "13px", { "lineHeight": "20px", "fontWeight": "400" } ], "title-md": [ "16px", { "lineHeight": "24px", "letterSpacing": "0.01em", "fontWeight": "600" } ], "title-lg": [ "20px", { "lineHeight": "28px", "fontWeight": "600" } ], "headline-sm": [ "22px", { "lineHeight": "30px", "fontWeight": "500" } ], "display-mobile": [ "38px", { "lineHeight": "44px", "letterSpacing": "-0.01em", "fontWeight": "600" } ] } } } };</script></head><body class="bg-surface font-body-md text-body-md text-on-surface min-h-screen flex flex-col antialiased selection:bg-secondary-fixed selection:text-on-secondary-fixed"><header class="fixed top-0 inset-x-0 z-50 bg-surface/90 backdrop-blur-xl shadow-[0_1px_8px_rgba(24,63,53,0.04)]"><div class="h-20 max-w-7xl mx-auto px-margin-mobile lg:px-margin flex items-center justify-between gap-gutter"><div class="flex items-center gap-space-md"><a class="flex items-center gap-space-sm group" data-path="home" href="#"><img alt="MoyoWell Logo" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/ALJJyrB7_AWWSafBjMHTpV7PTSEbY-pshvIkrNaPMgnQep-2LC9ZWbKa-Vrdqmh2MXeFww0ofA6yufxQlKZyukirITzk5hEUI51A6dEzftJLdQ3XozeunH2mWS1nEk1Xc8peGRYsdVpby4HlksKmhJI3llKRxA6SD3jlPq1mXSPSFb0Xntm6bn7IJ6ueeNr-rj4MN2fwf09-MRCmPYDTw-jDhHVEa9FXHrKGePngsHGdhCI"/><div class="flex flex-col"><span class="font-headline-sm text-headline-sm text-on-surface tracking-tight group-hover:text-primary transition-colors">MoyoWell</span><span class="font-label-sm text-label-sm text-secondary tracking-widest uppercase hidden sm:inline-block">Your wellbeing. Your next step.</span></div></a></div><nav class="hidden md:flex items-center gap-space-lg" data-active-classes="text-primary font-semibold border-b-2 border-primary"><a aria-current="page" class="transition-colors py-space-xs text-primary font-semibold border-b-2 border-primary" data-path="home" href="#">Home</a><a class="font-title-md text-title-md text-on-surface-variant hover:text-on-surface transition-colors py-space-xs" data-path="assessments" href="#">Assessments</a><a class="font-title-md text-title-md text-on-surface-variant hover:text-on-surface transition-colors py-space-xs" data-path="dashboard" href="#">Dashboard</a><a class="font-title-md text-title-md text-on-surface-variant hover:text-on-surface transition-colors py-space-xs" data-path="resources" href="#">Resources</a></nav><div class="flex items-center gap-space-md"><a class="inline-flex items-center gap-space-xs bg-error-container text-on-error-container hover:bg-error hover:text-on-error px-space-md py-space-xs rounded-xl font-label-md text-label-md uppercase tracking-wider transition-all shadow-[0_2px_8px_-2px_rgba(186,26,26,0.12)]" data-path="crisis-immediate-support" href="#"><span class="material-symbols-outlined text-lg">phone_in_talk</span><span>Need Immediate Help?</span></a><div class="flex items-center gap-space-sm pl-space-sm border-l border-outline-variant/30"><div class="text-right hidden xl:block"><div class="font-title-md text-title-md text-on-surface leading-tight">Amina K.</div><div class="inline-flex items-center gap-1 font-label-sm text-label-sm text-secondary bg-secondary-fixed/50 px-space-xs rounded-lg"><span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>Demo Mode</div></div><img alt="Profile" class="w-8 h-8 rounded-full object-cover ring-2 ring-surface-container-high" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCiwnF_yERjrij0rYB8DaEc0FnXfIqxoGFld_vYmlPxNw89chGfHrTHciD1oXaMm4dkQVQhIDh7hwabt-t3df6UWZrx5jVEZFCFuFa2lqeATEU24Nor0KJHmt8CAoq7Lpb6zJ5b9IMAGR6cGeNXQQleLTLEOHkFjjuRpl5nspi-NFzveUfhZ8wCAhGuRScxB46TAlNRzaq_pyL9NI_DlaQBpJL1l2lergLw0lgE_3w"/></div></div></div></header><main class="w-full pt-20 bg-surface flex-grow"><div class="flex flex-col w-full">
+<!-- Top Atmospheric Notification Bar -->
+<section class="w-full bg-secondary-container/40 py-space-xs px-margin-mobile lg:px-margin">
+<div class="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-space-xs">
+<div class="flex items-center gap-space-xs text-on-secondary-container">
+<span class="w-2 h-2 rounded-full bg-secondary animate-pulse"></span>
+<span class="font-label-sm text-label-sm uppercase tracking-wider">Sanctuary Prototype Edition 1.0 • Private &amp; Client-Side Sovereign</span>
+</div>
+<div class="flex items-center gap-space-sm font-label-sm text-label-sm text-on-secondary-container">
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-sm">shield_with_heart</span> Zero Telemetry</span>
+<span class="opacity-40">•</span>
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-sm">verified_user</span> Peer-Reviewed Metrics</span>
+</div>
+</div>
+</section>
+<!-- Hero Editorial Mosaic Section -->
+<section class="relative w-full overflow-hidden py-space-xl lg:py-space-xl">
+<div class="max-w-7xl mx-auto px-margin-mobile lg:px-margin">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter items-center">
+<!-- Left Editorial Column -->
+<div class="lg:col-span-7 space-y-space-lg">
+<div class="inline-flex items-center gap-space-xs bg-surface-container-high px-space-sm py-1 rounded-full text-secondary">
+<span class="material-symbols-outlined text-sm">spa</span>
+<span class="font-label-sm text-label-sm uppercase tracking-widest">Evidence-Based Mental Navigation</span>
+</div>
+<div class="space-y-space-md">
+<h1 class="font-display text-display text-on-surface tracking-tight leading-[1.08]">
+              Your wellbeing <br/>
+<span class="italic font-normal text-primary">deserves more</span> <br/>
+              than a score.
+            </h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-xl leading-relaxed">
+              Understand how you are feeling with quiet dignity. Discover meaningful next steps, personalized care pathways, and navigate your emotional state with clinical rigor and human tenderness.
+            </p>
+</div>
+<!-- CTAs -->
+<div class="pt-space-xs flex flex-wrap items-center gap-space-md">
+<a class="inline-flex items-center gap-space-xs bg-primary text-on-primary hover:bg-primary-container px-space-lg py-space-md rounded-lg font-title-md text-title-md transition-all shadow-md group" data-path="assessments" href="#">
+<span>Start a Wellbeing Check</span>
+<span class="material-symbols-outlined text-lg transition-transform group-hover:translate-x-1">arrow_forward</span>
+</a>
+<a class="inline-flex items-center gap-space-xs bg-surface-container-lowest text-secondary hover:bg-secondary-fixed/30 px-space-lg py-space-md rounded-lg font-title-md text-title-md transition-all shadow-sm" data-path="assessments" href="#">
+<span class="material-symbols-outlined text-lg">explore</span>
+<span>Explore Instruments</span>
+</a>
+</div>
+<!-- Clinical Quality Endorsement Pips -->
+<div class="pt-space-md flex flex-wrap items-center gap-space-lg text-on-surface-variant">
+<div class="flex items-center gap-space-xs">
+<div class="w-8 h-8 rounded-full bg-secondary-fixed flex items-center justify-center text-on-secondary-fixed">
+<span class="material-symbols-outlined text-base">task_alt</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-secondary">PHQ-9 &amp; GAD-7</span>
+<span class="font-body-sm text-body-sm">Gold-Standard Staging</span>
+</div>
+</div>
+<div class="flex items-center gap-space-xs">
+<div class="w-8 h-8 rounded-full bg-tertiary-fixed flex items-center justify-center text-on-tertiary-fixed">
+<span class="material-symbols-outlined text-base">lock</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-tertiary">Zero Tracking</span>
+<span class="font-body-sm text-body-sm">Strictly Local Data</span>
+</div>
+</div>
+<div class="flex items-center gap-space-xs">
+<div class="w-8 h-8 rounded-full bg-primary-fixed flex items-center justify-center text-on-primary-fixed">
+<span class="material-symbols-outlined text-base">self_improvement</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-primary">WHO-5 Index</span>
+<span class="font-body-sm text-body-sm">Psychological Vitality</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Right Visual Showcase with Floating Badges -->
+<div class="lg:col-span-5 relative">
+<!-- Ambient Terracotta Bloom -->
+<div class="absolute -top-12 -right-12 w-72 h-72 rounded-full bg-primary/10 blur-3xl pointer-events-none"></div>
+<div class="absolute -bottom-8 -left-8 w-60 h-60 rounded-full bg-secondary/15 blur-2xl pointer-events-none"></div>
+<!-- Editorial Photography Frame -->
+<div class="relative bg-surface-container-lowest p-space-sm rounded-xl shadow-xl">
+<div class="relative rounded-lg overflow-hidden aspect-[4/5] bg-surface-container">
+<img class="w-full h-full object-cover transition-transform duration-700 hover:scale-105" data-alt="Editorial candid photograph of a serene young woman with hair swept back in a botanical, warm-terracotta sunlit living room filled with fiddle leaf figs and potted monstera. She sits relaxed in an ochre-toned armchair, smiling gently while reading a linen journal. The warm golden natural daylight pours through sheer curtains, evoking peace, restorative solitude, and grounded holistic self-care with an earth-toned aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAPCAumXIckM3vPsVzK4fvg_8t9N7mHHTt5liuuVaNGapV3CiWkotyT-fcHJGQE4g_7m_PlgSooj3hx_UVfBfwPLCSpwFaHuEcC96Ld2PmFlbb-vaYpVPQZikPw4yQycr_uOBnPJFHKt64Xej47RuM2GnzdKNnw9MWCgYDOOoMRCtRhFt71vTDNM8JR_3hrjvV--G0S_TdNfTiMECv6cuaLu_gRopr1eyVH3Ug5Y5Q"/>
+<div class="absolute inset-0 bg-gradient-to-t from-on-surface/40 via-transparent to-transparent"></div>
+<!-- Badge: Instruments on Bottom Left of Image -->
+<div class="absolute bottom-4 left-4 right-4 bg-surface/90 backdrop-blur-md p-space-sm rounded-lg flex items-center justify-between text-on-surface shadow-md">
+<div class="flex items-center gap-space-xs">
+<span class="w-2.5 h-2.5 rounded-full bg-primary"></span>
+<span class="font-label-sm text-label-sm tracking-wider uppercase text-on-surface">Screening Standard</span>
+</div>
+<span class="font-label-sm text-label-sm text-secondary font-semibold">PHQ-9 • GAD-7 • WHO-5</span>
+</div>
+</div>
+<!-- Overlapping Floating Card -->
+<div class="absolute -bottom-6 -left-6 bg-surface-container-lowest p-space-md rounded-xl shadow-xl max-w-[240px] hidden sm:block">
+<div class="flex items-center justify-between gap-space-xs mb-1">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-secondary">Vitality Baseline</span>
+<span class="material-symbols-outlined text-secondary text-sm">trending_up</span>
+</div>
+<div class="font-headline-sm text-headline-sm text-on-surface">68<span class="font-body-sm text-body-sm text-on-surface-variant font-normal">/100</span></div>
+<p class="font-body-sm text-body-sm text-on-surface-variant pt-1">Grounded mood with moderate occupational strain.</p>
+</div>
+<!-- Floating Metric Pip Top Right -->
+<div class="absolute -top-4 -right-4 bg-surface-container-lowest px-space-md py-space-xs rounded-xl shadow-lg flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-primary text-base">lock</span>
+<span class="font-label-sm text-label-sm text-on-surface uppercase tracking-wide">Client Sovereign</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Urgent Safety Crisis Interstitial Banner -->
+<section class="w-full bg-error-container/40 py-space-md px-margin-mobile lg:px-margin">
+<div class="max-w-7xl mx-auto flex flex-col md:flex-row items-start md:items-center justify-between gap-space-md">
+<div class="flex items-start md:items-center gap-space-sm">
+<div class="p-space-xs bg-error text-on-error rounded-lg flex-shrink-0 mt-0.5 md:mt-0">
+<span class="material-symbols-outlined text-lg">crisis_alert</span>
+</div>
+<div>
+<div class="font-title-md text-title-md text-on-surface">In distress or feeling overwhelmed right now?</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">You do not have to wait for an assessment. Access verified, immediate, 24/7 crisis response counselors.</p>
+</div>
+</div>
+<div class="flex items-center gap-space-sm flex-shrink-0">
+<a class="bg-error text-on-error hover:bg-on-error-container px-space-md py-space-xs rounded-lg font-label-md text-label-md uppercase tracking-wider transition-colors inline-flex items-center gap-1 shadow-sm" data-path="crisis-immediate-support" href="#">
+<span class="material-symbols-outlined text-base">support_agent</span>
+<span>Access Crisis Line (988)</span>
+</a>
+</div>
+</div>
+</section>
+<!-- Value Proposition Pillars: 3 Column Asymmetric Grid -->
+<section class="w-full py-space-xl bg-surface-container-low">
+<div class="max-w-7xl mx-auto px-margin-mobile lg:px-margin space-y-space-lg">
+<div class="max-w-2xl space-y-space-xs">
+<span class="font-label-sm text-label-sm uppercase tracking-widest text-primary">Philosophy &amp; Guarantees</span>
+<h2 class="font-headline-lg text-headline-lg text-on-surface">Designed around patient dignity, clinical rigor, and total privacy.</h2>
+<p class="font-body-md text-body-md text-on-surface-variant">Screening is not a verdict; it is an instrument of orientation. We construct a safe sanctuary for honest self-reflection.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-gutter">
+<!-- Pillar 1 -->
+<div class="bg-surface-container-lowest p-space-lg rounded-xl shadow-sm flex flex-col justify-between space-y-space-md transition-transform hover:-translate-y-1">
+<div class="space-y-space-md">
+<div class="w-12 h-12 rounded-lg bg-primary-fixed flex items-center justify-center text-on-primary-fixed">
+<span class="material-symbols-outlined text-2xl">biotech</span>
+</div>
+<div class="space-y-space-xs">
+<span class="font-label-sm text-label-sm text-primary uppercase tracking-wider font-semibold">Standard 01</span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Rigorous &amp; Transparent</h3>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+                Peer-reviewed screening instruments (PHQ-9, GAD-7, WHO-5) utilizing deterministic scoring rules. We show you exactly how questions correlate to published clinical cutoffs without hidden black-box algorithms.
+              </p>
+</div>
+</div>
+<div class="pt-space-sm flex items-center gap-space-xs text-secondary font-label-md text-label-md uppercase tracking-wider">
+<span>Validated Question Sets</span>
+<span class="material-symbols-outlined text-sm">check_circle</span>
+</div>
+</div>
+<!-- Pillar 2 -->
+<div class="bg-surface-container-lowest p-space-lg rounded-xl shadow-sm flex flex-col justify-between space-y-space-md transition-transform hover:-translate-y-1">
+<div class="space-y-space-md">
+<div class="w-12 h-12 rounded-lg bg-secondary-fixed flex items-center justify-center text-on-secondary-fixed">
+<span class="material-symbols-outlined text-2xl">route</span>
+</div>
+<div class="space-y-space-xs">
+<span class="font-label-sm text-label-sm text-secondary uppercase tracking-wider font-semibold">Standard 02</span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Compassionate Navigation</h3>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+                Contextual next steps tailored to your state—connecting you smoothly to evidence-based self-care, sleep restoration regimens, or direct connection with accredited licensed therapists.
+              </p>
+</div>
+</div>
+<div class="pt-space-sm flex items-center gap-space-xs text-secondary font-label-md text-label-md uppercase tracking-wider">
+<span>Human-Centric Outcomes</span>
+<span class="material-symbols-outlined text-sm">check_circle</span>
+</div>
+</div>
+<!-- Pillar 3 -->
+<div class="bg-surface-container-lowest p-space-lg rounded-xl shadow-sm flex flex-col justify-between space-y-space-md transition-transform hover:-translate-y-1">
+<div class="space-y-space-md">
+<div class="w-12 h-12 rounded-lg bg-tertiary-fixed flex items-center justify-center text-on-tertiary-fixed">
+<span class="material-symbols-outlined text-2xl">encrypted</span>
+</div>
+<div class="space-y-space-xs">
+<span class="font-label-sm text-label-sm text-tertiary uppercase tracking-wider font-semibold">Standard 03</span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Uncompromising Privacy</h3>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+                Zero third-party telemetry, no ad pixels, and strict local sandboxing. Your psychological health indicators stay encrypted in your browser session and are never sold or surfaced to insurers.
+              </p>
+</div>
+</div>
+<div class="pt-space-sm flex items-center gap-space-xs text-secondary font-label-md text-label-md uppercase tracking-wider">
+<span>Guaranteed Anonymity</span>
+<span class="material-symbols-outlined text-sm">check_circle</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Screening Instruments Bento Showcase -->
+<section class="w-full py-space-xl">
+<div class="max-w-7xl mx-auto px-margin-mobile lg:px-margin space-y-space-xl">
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-space-md">
+<div class="space-y-space-xs max-w-xl">
+<span class="font-label-sm text-label-sm uppercase tracking-widest text-primary">Validated Clinical Battery</span>
+<h2 class="font-headline-lg text-headline-lg text-on-surface">Choose an instrument to begin your pathfinding.</h2>
+<p class="font-body-md text-body-md text-on-surface-variant">Each screening is paced gently. Take as much time as you require; answers are autosaved locally.</p>
+</div>
+<div>
+<a class="inline-flex items-center gap-space-xs text-secondary hover:text-primary font-title-md text-title-md transition-colors" data-path="assessments" href="#">
+<span>View all assessment methodology</span>
+<span class="material-symbols-outlined text-lg">arrow_outward</span>
+</a>
+</div>
+</div>
+<!-- Instruments Grid -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-gutter">
+<!-- PHQ-9 Card -->
+<div class="bg-surface-container-lowest rounded-xl p-space-lg shadow-sm flex flex-col justify-between space-y-space-lg hover:shadow-md transition-shadow relative overflow-hidden group">
+<div class="absolute top-0 right-0 w-24 h-24 bg-primary/5 rounded-bl-full pointer-events-none group-hover:scale-110 transition-transform"></div>
+<div class="space-y-space-md">
+<div class="flex items-center justify-between">
+<span class="bg-primary-fixed text-on-primary-fixed font-label-md text-label-md uppercase tracking-wider px-space-xs py-0.5 rounded">Depression Screen</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant flex items-center gap-1">
+<span class="material-symbols-outlined text-sm">schedule</span> ~3 min
+              </span>
+</div>
+<div class="space-y-space-xs">
+<h3 class="font-headline-sm text-headline-sm text-on-surface">PHQ-9</h3>
+<p class="font-title-md text-title-md text-secondary">Patient Health Questionnaire-9</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed pt-space-xs">
+                Evaluates the presence and frequency of depressive symptoms over the prior two weeks. Assesses mood, sleep patterns, energy levels, and psychomotor changes.
+              </p>
+</div>
+<!-- Metric Specification Pill Box -->
+<div class="p-space-sm bg-surface-container rounded-lg space-y-space-xs">
+<div class="flex justify-between items-center text-on-surface-variant font-label-sm text-label-sm">
+<span>Total Items</span>
+<span class="font-semibold text-on-surface">9 Questions</span>
+</div>
+<div class="flex justify-between items-center text-on-surface-variant font-label-sm text-label-sm">
+<span>Score Spectrum</span>
+<span class="font-semibold text-on-surface">0 – 27 Staging</span>
+</div>
+<div class="flex justify-between items-center text-on-surface-variant font-label-sm text-label-sm">
+<span>Clinical Standard</span>
+<span class="font-semibold text-primary">Kroenke et al. (2001)</span>
+</div>
+</div>
+</div>
+<div class="pt-space-xs">
+<a class="w-full inline-flex items-center justify-center gap-space-xs bg-surface-container-high hover:bg-primary hover:text-on-primary text-on-surface py-space-sm rounded-lg font-title-md text-title-md transition-colors" data-path="assessments" href="#">
+<span>Begin PHQ-9</span>
+<span class="material-symbols-outlined text-base">north_east</span>
+</a>
+</div>
+</div>
+<!-- GAD-7 Card -->
+<div class="bg-surface-container-lowest rounded-xl p-space-lg shadow-sm flex flex-col justify-between space-y-space-lg hover:shadow-md transition-shadow relative overflow-hidden group">
+<div class="absolute top-0 right-0 w-24 h-24 bg-secondary/5 rounded-bl-full pointer-events-none group-hover:scale-110 transition-transform"></div>
+<div class="space-y-space-md">
+<div class="flex items-center justify-between">
+<span class="bg-secondary-fixed text-on-secondary-fixed font-label-md text-label-md uppercase tracking-wider px-space-xs py-0.5 rounded">Anxiety Screen</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant flex items-center gap-1">
+<span class="material-symbols-outlined text-sm">schedule</span> ~2.5 min
+              </span>
+</div>
+<div class="space-y-space-xs">
+<h3 class="font-headline-sm text-headline-sm text-on-surface">GAD-7</h3>
+<p class="font-title-md text-title-md text-secondary">Generalized Anxiety Disorder-7</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed pt-space-xs">
+                Screens for generalized anxiety symptoms, persistent worry, emotional restlessness, irritability, and muscle tension experienced in daily life.
+              </p>
+</div>
+<!-- Metric Specification Pill Box -->
+<div class="p-space-sm bg-surface-container rounded-lg space-y-space-xs">
+<div class="flex justify-between items-center text-on-surface-variant font-label-sm text-label-sm">
+<span>Total Items</span>
+<span class="font-semibold text-on-surface">7 Questions</span>
+</div>
+<div class="flex justify-between items-center text-on-surface-variant font-label-sm text-label-sm">
+<span>Score Spectrum</span>
+<span class="font-semibold text-on-surface">0 – 21 Severity</span>
+</div>
+<div class="flex justify-between items-center text-on-surface-variant font-label-sm text-label-sm">
+<span>Clinical Standard</span>
+<span class="font-semibold text-secondary">Spitzer et al. (2006)</span>
+</div>
+</div>
+</div>
+<div class="pt-space-xs">
+<a class="w-full inline-flex items-center justify-center gap-space-xs bg-surface-container-high hover:bg-secondary hover:text-on-secondary text-on-surface py-space-sm rounded-lg font-title-md text-title-md transition-colors" data-path="assessments" href="#">
+<span>Begin GAD-7</span>
+<span class="material-symbols-outlined text-base">north_east</span>
+</a>
+</div>
+</div>
+<!-- WHO-5 Card -->
+<div class="bg-surface-container-lowest rounded-xl p-space-lg shadow-sm flex flex-col justify-between space-y-space-lg hover:shadow-md transition-shadow relative overflow-hidden group">
+<div class="absolute top-0 right-0 w-24 h-24 bg-tertiary/5 rounded-bl-full pointer-events-none group-hover:scale-110 transition-transform"></div>
+<div class="space-y-space-md">
+<div class="flex items-center justify-between">
+<span class="bg-tertiary-fixed text-on-tertiary-fixed font-label-md text-label-md uppercase tracking-wider px-space-xs py-0.5 rounded">Vitality Index</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant flex items-center gap-1">
+<span class="material-symbols-outlined text-sm">schedule</span> ~1.5 min
+              </span>
+</div>
+<div class="space-y-space-xs">
+<h3 class="font-headline-sm text-headline-sm text-on-surface">WHO-5</h3>
+<p class="font-title-md text-title-md text-secondary">Well-Being Index</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed pt-space-xs">
+                A brief, positively phrased self-reported measure gauging positive mood, psychological resilience, energy vitality, and general wellness over the past two weeks.
+              </p>
+</div>
+<!-- Metric Specification Pill Box -->
+<div class="p-space-sm bg-surface-container rounded-lg space-y-space-xs">
+<div class="flex justify-between items-center text-on-surface-variant font-label-sm text-label-sm">
+<span>Total Items</span>
+<span class="font-semibold text-on-surface">5 Questions</span>
+</div>
+<div class="flex justify-between items-center text-on-surface-variant font-label-sm text-label-sm">
+<span>Score Spectrum</span>
+<span class="font-semibold text-on-surface">0 – 100% Index</span>
+</div>
+<div class="flex justify-between items-center text-on-surface-variant font-label-sm text-label-sm">
+<span>Global Standard</span>
+<span class="font-semibold text-tertiary">WHO Psychiatric Research</span>
+</div>
+</div>
+</div>
+<div class="pt-space-xs">
+<a class="w-full inline-flex items-center justify-center gap-space-xs bg-surface-container-high hover:bg-tertiary hover:text-on-tertiary text-on-surface py-space-sm rounded-lg font-title-md text-title-md transition-colors" data-path="assessments" href="#">
+<span>Begin WHO-5</span>
+<span class="material-symbols-outlined text-base">north_east</span>
+</a>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Interactive "How It Works" Editorial Walkthrough -->
+<section class="w-full py-space-xl bg-surface-container-low">
+<div class="max-w-7xl mx-auto px-margin-mobile lg:px-margin space-y-space-xl">
+<div class="text-center max-w-2xl mx-auto space-y-space-xs">
+<span class="font-label-sm text-label-sm uppercase tracking-widest text-primary">The Architecture of Care</span>
+<h2 class="font-headline-lg text-headline-lg text-on-surface">How MoyoWell guides you from query to clarity.</h2>
+<p class="font-body-md text-body-md text-on-surface-variant">A deliberate four-phase navigation system designed to empower personal agency.</p>
+</div>
+<!-- 4 Step Process Layout -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-gutter relative">
+<!-- Step 1 -->
+<div class="bg-surface-container-lowest p-space-lg rounded-xl shadow-sm space-y-space-md relative">
+<div class="flex items-center justify-between">
+<span class="font-headline-lg text-headline-lg text-primary/30">01</span>
+<div class="w-10 h-10 rounded-full bg-surface-container-high flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined text-lg">tune</span>
+</div>
+</div>
+<div class="space-y-space-xs">
+<h3 class="font-title-lg text-title-lg text-on-surface">Take a 3-Minute Check</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
+              Select one or combine validated assessments in a calm, distraction-free environment. No countdown timers, no pressure.
+            </p>
+</div>
+<div class="pt-space-xs">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-secondary flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span> 100% Confidential
+            </span>
+</div>
+</div>
+<!-- Step 2 -->
+<div class="bg-surface-container-lowest p-space-lg rounded-xl shadow-sm space-y-space-md relative">
+<div class="flex items-center justify-between">
+<span class="font-headline-lg text-headline-lg text-primary/30">02</span>
+<div class="w-10 h-10 rounded-full bg-surface-container-high flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined text-lg">analytics</span>
+</div>
+</div>
+<div class="space-y-space-xs">
+<h3 class="font-title-lg text-title-lg text-on-surface">Rule-Based Staging</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
+              Your responses are scored instantly against published clinical thresholds. We provide itemized breakdowns of individual symptom drivers.
+            </p>
+</div>
+<div class="pt-space-xs">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-secondary flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span> Deterministic Logic
+            </span>
+</div>
+</div>
+<!-- Step 3 -->
+<div class="bg-surface-container-lowest p-space-lg rounded-xl shadow-sm space-y-space-md relative">
+<div class="flex items-center justify-between">
+<span class="font-headline-lg text-headline-lg text-primary/30">03</span>
+<div class="w-10 h-10 rounded-full bg-surface-container-high flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined text-lg">explore_nearby</span>
+</div>
+</div>
+<div class="space-y-space-xs">
+<h3 class="font-title-lg text-title-lg text-on-surface">Tailored Navigation</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
+              Receive three tailored paths: guided breathwork and somatic groundings for mild strain, peer community access, or clinical provider referral directories.
+            </p>
+</div>
+<div class="pt-space-xs">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-secondary flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span> Actionable Routines
+            </span>
+</div>
+</div>
+<!-- Step 4 -->
+<div class="bg-surface-container-lowest p-space-lg rounded-xl shadow-sm space-y-space-md relative">
+<div class="flex items-center justify-between">
+<span class="font-headline-lg text-headline-lg text-primary/30">04</span>
+<div class="w-10 h-10 rounded-full bg-error-container flex items-center justify-center text-on-error-container">
+<span class="material-symbols-outlined text-lg">emergency</span>
+</div>
+</div>
+<div class="space-y-space-xs">
+<h3 class="font-title-lg text-title-lg text-on-surface">Safety Safeguards</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
+              If an elevated risk indicator is detected (such as PHQ-9 item 9), the system gently surfaces direct, confidential crisis helplines before summary views.
+            </p>
+</div>
+<div class="pt-space-xs">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-error flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-error"></span> Prioritized Safety
+            </span>
+</div>
+</div>
+</div>
+<!-- Synthetic Interactive Interactive Simulator -->
+<div class="bg-surface-container-lowest rounded-xl p-space-lg shadow-sm">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter items-center">
+<div class="lg:col-span-5 space-y-space-sm">
+<span class="font-label-sm text-label-sm uppercase tracking-widest text-secondary">Interactive Demonstration</span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">How severity translates into proactive care</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Toggle sample score states below to see how MoyoWell transforms numeric evaluation into comforting, non-stigmatizing pathfinding.</p>
+<div class="flex flex-wrap gap-space-xs pt-space-xs" id="demo-toggles">
+<button class="px-space-sm py-1 rounded bg-secondary text-on-secondary font-label-md text-label-md transition-colors demo-btn" data-tier="mild" onclick="updatePreview('mild')">Mild (0-9)</button>
+<button class="px-space-sm py-1 rounded bg-surface-container-high text-on-surface font-label-md text-label-md transition-colors demo-btn" data-tier="moderate" onclick="updatePreview('moderate')">Moderate (10-14)</button>
+<button class="px-space-sm py-1 rounded bg-surface-container-high text-on-surface font-label-md text-label-md transition-colors demo-btn" data-tier="moderately-severe" onclick="updatePreview('moderately-severe')">Elevated (15+)</button>
+</div>
+</div>
+<div class="lg:col-span-7 bg-surface-container rounded-lg p-space-md space-y-space-md">
+<div class="flex items-center justify-between border-b border-outline-variant/30 pb-space-sm">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-primary text-base">psychology</span>
+<span class="font-title-md text-title-md text-on-surface" id="preview-title">Mild Adjustment Pattern</span>
+</div>
+<span class="font-label-md text-label-md px-space-xs py-0.5 rounded bg-secondary-fixed text-on-secondary-fixed" id="preview-pill">Score: 6/27</span>
+</div>
+<div class="space-y-space-xs">
+<div class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant">Recommended Pathway:</div>
+<p class="font-body-md text-body-md text-on-surface" id="preview-desc">
+                Sub-threshold depressive indicators observed. Recommended initial focus on circadian rhythm realignment, structured outdoor exposure, and weekly self-monitoring check-ins.
+              </p>
+</div>
+<div class="grid grid-cols-2 sm:grid-cols-3 gap-space-sm pt-space-xs text-center" id="preview-actions">
+<div class="bg-surface-container-lowest p-space-sm rounded">
+<span class="material-symbols-outlined text-secondary text-lg">bedtime</span>
+<div class="font-label-sm text-label-sm text-on-surface mt-1">Sleep Hygiene</div>
+</div>
+<div class="bg-surface-container-lowest p-space-sm rounded">
+<span class="material-symbols-outlined text-secondary text-lg">self_improvement</span>
+<div class="font-label-sm text-label-sm text-on-surface mt-1">Box Breathing</div>
+</div>
+<div class="bg-surface-container-lowest p-space-sm rounded col-span-2 sm:col-span-1">
+<span class="material-symbols-outlined text-secondary text-lg">event_repeat</span>
+<div class="font-label-sm text-label-sm text-on-surface mt-1">14-Day Check-in</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Editorial Secondary Deep Dive: The Sanctuary Philosophy -->
+<section class="w-full py-space-xl">
+<div class="max-w-7xl mx-auto px-margin-mobile lg:px-margin">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter items-center">
+<!-- Left Image Composition -->
+<div class="lg:col-span-5 order-2 lg:order-1 relative">
+<div class="relative rounded-xl overflow-hidden shadow-xl aspect-square bg-surface-container">
+<img class="w-full h-full object-cover" data-alt="Editorial still life photograph of botanical herbal tea in a hand-thrown ceramic mug sitting on a textured raw oak table next to a botanical linen notebook, fountain pen, and fresh eucalyptus leaves. Soft natural morning window light illuminates the warm terracotta and forest green tones, creating a tranquil mindful aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDJbme1V_2_oSIcRnmRq4ymaF_tJLicQrr5bvWyP79rdAgPsiAt_g84nvm3fBjS-UPM7YQ7WoVm_KEQU5T0GAq9m2stRgbfTKw76B-dHt0YH2ZHt_TQTmksgekcSqA6R-28R8K3mRYNB6FBj5lGRgwQIG3Vh34JWo_LhfC4WuWwsGrjOV5A9_R_B9GsR4iQTuALscodFdKtvhQwWk_zeuwA9Pa3FRxbbCIqr8-U1ms"/>
+</div>
+<!-- Quote Callout Card -->
+<div class="absolute -bottom-6 -right-6 bg-surface-container-lowest p-space-md rounded-xl shadow-lg max-w-xs hidden sm:block">
+<p class="font-headline-sm text-headline-sm italic text-primary leading-snug">"The first step toward healing is giving words to what has been wordless."</p>
+<span class="block font-label-sm text-label-sm uppercase tracking-widest text-on-surface-variant mt-2">— MoyoWell Clinical Advisory</span>
+</div>
+</div>
+<!-- Right Narrative Column -->
+<div class="lg:col-span-7 order-1 lg:order-2 space-y-space-md lg:pl-space-lg">
+<span class="font-label-sm text-label-sm uppercase tracking-widest text-primary">A Sovereign Alternative</span>
+<h2 class="font-headline-lg text-headline-lg text-on-surface">Moving beyond clinical sterility into warm, grounded healing.</h2>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+            Traditional online health assessments often look like hospital intake forms: sterile, intimidating, and emotionally barren. They reduce human distress to red alert tallies without honoring your lived experience.
+          </p>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+            MoyoWell treats mental wellbeing as an organic landscape. Whether you are navigating temporary grief, enduring chronic burnout, or exploring prophylactic self-care, our platform acts as your reflective mirror—unhurried, unmonetized, and completely your own.
+          </p>
+<div class="pt-space-sm">
+<div class="grid grid-cols-2 gap-space-md">
+<div class="space-y-1">
+<div class="font-headline-md text-headline-md text-secondary">3 min</div>
+<div class="font-body-sm text-body-sm text-on-surface-variant">Average completion time per validated scale</div>
+</div>
+<div class="space-y-1">
+<div class="font-headline-md text-headline-md text-primary">0 bytes</div>
+<div class="font-body-sm text-body-sm text-on-surface-variant">Personal identifiable data transmitted to remote servers</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Clear Explicit Medical Disclaimer Callout -->
+<section class="w-full py-space-lg bg-surface-container-low">
+<div class="max-w-7xl mx-auto px-margin-mobile lg:px-margin">
+<div class="bg-surface-container-lowest rounded-xl p-space-lg shadow-sm flex flex-col md:flex-row items-start gap-space-md">
+<div class="w-10 h-10 rounded-full bg-surface-variant flex items-center justify-center text-on-surface flex-shrink-0">
+<span class="material-symbols-outlined text-xl">info</span>
+</div>
+<div class="space-y-space-xs">
+<h4 class="font-title-md text-title-md text-on-surface uppercase tracking-wide">Essential Clinical Notice &amp; Scope of Service</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
+<strong>MoyoWell is a screening and navigation guide, not a medical diagnostic service.</strong> Scores and generated pathways are intended solely for educational, contemplative, and informational purposes. They do not constitute clinical psychiatric diagnoses, formal medical prescriptions, or therapeutic relationships. If you suspect you may be experiencing a clinical mental health condition, we strongly urge you to consult with a licensed psychiatrist, clinical psychologist, or medical doctor.
+          </p>
+</div>
+</div>
+</div>
+</section>
+<!-- Final Call to Reflection Hero Section -->
+<section class="w-full py-space-xl bg-surface">
+<div class="max-w-5xl mx-auto px-margin-mobile lg:px-margin text-center space-y-space-lg">
+<div class="inline-flex items-center gap-space-xs text-primary font-label-sm text-label-sm uppercase tracking-widest">
+<span class="material-symbols-outlined text-sm">nature_people</span>
+<span>Begin Whenever You Are Ready</span>
+</div>
+<h2 class="font-headline-lg text-headline-lg text-on-surface max-w-2xl mx-auto">
+        Give yourself three quiet minutes to check in.
+      </h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-xl mx-auto">
+        No account creation required. No email gatekeeping. Start directly with an anonymous, validated wellbeing instrument.
+      </p>
+<div class="flex flex-wrap items-center justify-center gap-space-md pt-space-xs">
+<a class="inline-flex items-center gap-space-xs bg-primary text-on-primary hover:bg-primary-container px-space-xl py-space-md rounded-lg font-title-md text-title-md transition-all shadow-md group" data-path="assessments" href="#">
+<span>Start a Wellbeing Check</span>
+<span class="material-symbols-outlined text-lg transition-transform group-hover:translate-x-1">arrow_forward</span>
+</a>
+<a class="inline-flex items-center gap-space-xs bg-surface-container-high text-on-surface hover:bg-surface-container-highest px-space-lg py-space-md rounded-lg font-title-md text-title-md transition-colors" data-path="crisis-immediate-support" href="#">
+<span class="material-symbols-outlined text-lg text-error">phone_in_talk</span>
+<span>Emergency &amp; Crisis Support</span>
+</a>
+</div>
+</div>
+</section>
+<!-- Interactive Script for Preview Simulator -->
+<script>
+    function updatePreview(tier) {
+      const title = document.getElementById('preview-title');
+      const pill = document.getElementById('preview-pill');
+      const desc = document.getElementById('preview-desc');
+      const actions = document.getElementById('preview-actions');
+      const buttons = document.querySelectorAll('.demo-btn');
+
+      // Update button styling
+      buttons.forEach(btn => {
+        if (btn.getAttribute('data-tier') === tier) {
+          btn.className = 'px-space-sm py-1 rounded bg-secondary text-on-secondary font-label-md text-label-md transition-colors demo-btn';
+        } else {
+          btn.className = 'px-space-sm py-1 rounded bg-surface-container-high text-on-surface font-label-md text-label-md transition-colors demo-btn';
+        }
+      });
+
+      if (tier === 'mild') {
+        title.textContent = 'Mild Adjustment Pattern';
+        pill.textContent = 'Score: 6/27 (Sub-threshold)';
+        pill.className = 'font-label-md text-label-md px-space-xs py-0.5 rounded bg-secondary-fixed text-on-secondary-fixed';
+        desc.textContent = 'Sub-threshold depressive indicators observed. Recommended initial focus on circadian rhythm realignment, structured outdoor exposure, and weekly self-monitoring check-ins.';
+        actions.innerHTML = `
+          <div class="bg-surface-container-lowest p-space-sm rounded">
+            <span class="material-symbols-outlined text-secondary text-lg">bedtime</span>
+            <div class="font-label-sm text-label-sm text-on-surface mt-1">Sleep Hygiene</div>
+          </div>
+          <div class="bg-surface-container-lowest p-space-sm rounded">
+            <span class="material-symbols-outlined text-secondary text-lg">self_improvement</span>
+            <div class="font-label-sm text-label-sm text-on-surface mt-1">Box Breathing</div>
+          </div>
+          <div class="bg-surface-container-lowest p-space-sm rounded col-span-2 sm:col-span-1">
+            <span class="material-symbols-outlined text-secondary text-lg">event_repeat</span>
+            <div class="font-label-sm text-label-sm text-on-surface mt-1">14-Day Check-in</div>
+          </div>
+        `;
+      } else if (tier === 'moderate') {
+        title.textContent = 'Moderate Anxiety & Stress Symptoms';
+        pill.textContent = 'Score: 12/21 (Moderate)';
+        pill.className = 'font-label-md text-label-md px-space-xs py-0.5 rounded bg-tertiary-fixed text-on-tertiary-fixed';
+        desc.textContent = 'Symptoms may be interfering with daily concentration, task initiation, and physical tension. Structured cognitive reframing exercises and professional consultations are recommended.';
+        actions.innerHTML = `
+          <div class="bg-surface-container-lowest p-space-sm rounded">
+            <span class="material-symbols-outlined text-tertiary text-lg">support</span>
+            <div class="font-label-sm text-label-sm text-on-surface mt-1">Therapist Matching</div>
+          </div>
+          <div class="bg-surface-container-lowest p-space-sm rounded">
+            <span class="material-symbols-outlined text-tertiary text-lg">menu_book</span>
+            <div class="font-label-sm text-label-sm text-on-surface mt-1">CBT Worksheets</div>
+          </div>
+          <div class="bg-surface-container-lowest p-space-sm rounded col-span-2 sm:col-span-1">
+            <span class="material-symbols-outlined text-tertiary text-lg">groups</span>
+            <div class="font-label-sm text-label-sm text-on-surface mt-1">Peer Circles</div>
+          </div>
+        `;
+      } else if (tier === 'moderately-severe') {
+        title.textContent = 'Elevated Symptom Burden Detected';
+        pill.textContent = 'Score: 18/27 (Moderately Severe)';
+        pill.className = 'font-label-md text-label-md px-space-xs py-0.5 rounded bg-primary-fixed text-on-primary-fixed';
+        desc.textContent = 'Notable disruption across sleep, energy, and somatic functioning. Prioritizes warm clinical coordination, clinician summary export, and direct crisis hotline readiness.';
+        actions.innerHTML = `
+          <div class="bg-surface-container-lowest p-space-sm rounded">
+            <span class="material-symbols-outlined text-primary text-lg">medical_services</span>
+            <div class="font-label-sm text-label-sm text-on-surface mt-1">Clinical Intake</div>
+          </div>
+          <div class="bg-surface-container-lowest p-space-sm rounded">
+            <span class="material-symbols-outlined text-primary text-lg">picture_as_pdf</span>
+            <div class="font-label-sm text-label-sm text-on-surface mt-1">Export PDF Report</div>
+          </div>
+          <div class="bg-surface-container-lowest p-space-sm rounded col-span-2 sm:col-span-1">
+            <span class="material-symbols-outlined text-error text-lg">phone_in_talk</span>
+            <div class="font-label-sm text-label-sm text-on-surface mt-1">988 Hotline</div>
+          </div>
+        `;
+      }
+    }
+  </script>
+</div></main><footer class="w-full bg-surface-container-low mt-auto"><div class="max-w-7xl mx-auto px-margin-mobile lg:px-margin pt-space-xl pb-space-lg"><div class="bg-surface-container-highest/60 rounded-xl p-space-md mb-space-lg flex flex-col md:flex-row items-start md:items-center justify-between gap-space-md shadow-[0_1px_4px_rgba(0,0,0,0.02)]"><div class="flex items-center gap-space-sm text-on-surface"><span class="material-symbols-outlined text-primary text-xl">emergency</span><span class="font-title-md text-title-md">In immediate danger or crisis? Call or text 988 (Lifeline) or local emergency services.</span></div><a class="bg-primary text-on-primary hover:bg-primary-container hover:text-on-primary-container px-space-md py-space-xs rounded-lg font-label-md text-label-md uppercase tracking-wider transition-colors inline-flex items-center gap-1" data-path="crisis-immediate-support" href="#">Emergency Hub</a></div><div class="grid grid-cols-1 md:grid-cols-12 gap-gutter py-space-lg border-t border-outline-variant/30"><div class="md:col-span-5 space-y-space-sm"><div class="flex items-center gap-space-xs"><span class="font-headline-sm text-headline-sm text-on-surface">MoyoWell</span><span class="text-secondary font-label-sm text-label-sm uppercase tracking-widest">Navigation Prototype</span></div><p class="font-body-sm text-body-sm text-on-surface-variant max-w-md">A warm, sovereign mental wellbeing screening and pathfinding companion designed to bridge reflection with clinical and community care pathways.</p><div class="flex items-center gap-space-xs font-label-sm text-label-sm text-secondary pt-space-xs"><span class="material-symbols-outlined text-sm">lock</span><span>Privacy Assurance: All activity runs on local synthetic demo data. Zero third-party telemetry.</span></div></div><div class="md:col-span-4 space-y-space-xs"><h4 class="font-label-md text-label-md text-on-surface uppercase tracking-wider">Clinical Notice</h4><p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">MoyoWell is a wellbeing screening and navigation prototype, NOT a diagnostic tool, medical device or replacement for professional mental healthcare. Always seek the advice of a qualified mental health specialist.</p></div><div class="md:col-span-3 space-y-space-xs"><h4 class="font-label-md text-label-md text-on-surface uppercase tracking-wider">Navigation</h4><ul class="space-y-space-xs font-body-sm text-body-sm"><li class="flex items-center gap-1"><a class="text-on-surface-variant hover:text-on-surface transition-colors" data-path="assessments" href="#">Self Assessments</a></li><li class="flex items-center gap-1"><a class="text-on-surface-variant hover:text-on-surface transition-colors" data-path="resources" href="#">Support Library</a></li><li class="flex items-center gap-1"><a class="text-primary hover:text-on-surface font-semibold transition-colors" data-path="crisis-immediate-support" href="#">Immediate Crisis Resources</a></li></ul></div></div><div class="pt-space-md border-t border-outline-variant/20 flex flex-col sm:flex-row items-center justify-between gap-space-sm font-label-sm text-label-sm text-on-surface-variant"><div>© 2025 MoyoWell. Earth-drawn architecture for preventive wellbeing.</div><div>Synthetic Prototype Version 1.0 • Anonymous Session</div></div></div></footer></body></html>
