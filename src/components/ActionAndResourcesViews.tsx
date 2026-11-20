@@ -64,7 +64,7 @@ export function ActionPathwayView({
             Action Pathway &amp; Care Directory
           </h1>
           <p className="text-[15px] text-on-surface-variant max-w-2xl">
-            Track daily restorative routines locally and browse vetted clinical and community care options.
+            Track daily restorative routines locally and browse clinical and community care options. Each listing shows whether it has been verified.
           </p>
         </div>
 
@@ -152,7 +152,7 @@ export function ActionPathwayView({
               Clinical &amp; Community Care Network
             </h2>
             <p className="text-sm text-on-surface-variant">
-              Vetted counseling centers, psychiatric outpatient teams, and free community circles.
+              Counseling centers, psychiatric outpatient teams, and community circles. Always confirm details by phone before visiting.
             </p>
           </div>
 
@@ -211,6 +211,17 @@ export function ActionPathwayView({
                 <div className="space-y-2">
                   <span className="text-[11px] font-semibold uppercase tracking-wider text-secondary block">
                     {provider.credentials}
+                  </span>
+                  <span
+                    className={`inline-block text-[11px] font-semibold px-2 py-0.5 rounded-full ${
+                      provider.verifiedOn
+                        ? "bg-secondary-fixed/60 text-on-secondary-fixed"
+                        : "bg-surface-container-high text-on-surface-variant"
+                    }`}
+                  >
+                    {provider.verifiedOn
+                      ? `Verified ${provider.verifiedOn}`
+                      : "Sample listing · not yet verified"}
                   </span>
                   <h3 className="font-serif text-xl font-medium text-on-surface">
                     {provider.name}

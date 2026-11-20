@@ -195,7 +195,7 @@ export function PublicLayout({
               <div className="flex items-center gap-2 text-xs text-secondary pt-1">
                 <Lock className="w-3.5 h-3.5 shrink-0" />
                 <span>
-                  Privacy Assurance: Assessment entries remain local in your browser session with zero external tracking.
+                  Privacy: your answers and results are stored only in this browser, with no trackers. They are shared only if you choose “Personalize Explanation”, and then without your name or contact details.
                 </span>
               </div>
             </div>
@@ -357,7 +357,7 @@ export function PortalLayout({
           <span>Emergency Crisis</span>
         </button>
         <p className="text-[11px] text-on-surface-variant text-center px-2">
-          Local Session · Zero PII Transmitted
+          Local Session · Stored on this device
         </p>
       </div>
     </div>
