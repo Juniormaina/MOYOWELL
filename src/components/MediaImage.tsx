@@ -6,9 +6,11 @@ interface MediaImageProps {
   alt: string;
   className?: string;
   fallbackTitle?: string;
+  /** Above-the-fold image: load eagerly instead of lazily. */
+  priority?: boolean;
 }
 
-export function MediaImage({ src, alt, className = "", fallbackTitle }: MediaImageProps) {
+export function MediaImage({ src, alt, className = "", fallbackTitle, priority = false }: MediaImageProps) {
   const [failed, setFailed] = useState(false);
 
   if (failed) {
@@ -32,6 +34,8 @@ export function MediaImage({ src, alt, className = "", fallbackTitle }: MediaIma
     <img
       src={src}
       alt={alt}
+      loading={priority ? "eager" : "lazy"}
+      decoding="async"
       referrerPolicy="no-referrer"
       onError={() => setFailed(true)}
       className={className}

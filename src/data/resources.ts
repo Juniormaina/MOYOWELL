@@ -1,7 +1,7 @@
-import teaJournalImg from "@/src/assets/images/tea_journal_still_life_1794762544818.jpg";
-import sanctuaryPalmImg from "@/src/assets/images/sanctuary_pottery_palm_1794762544492.jpg";
-import botanicalFernsImg from "@/src/assets/images/botanical_ferns_courtyard_1794762545318.jpg";
-import consultationLoungeImg from "@/src/assets/images/calm_consultation_lounge_1794762545595.jpg";
+import teaJournalImg from "@/src/assets/images/tea_journal_still_life_1794762544818.webp";
+import sanctuaryPalmImg from "@/src/assets/images/sanctuary_pottery_palm_1794762544492.webp";
+import botanicalFernsImg from "@/src/assets/images/botanical_ferns_courtyard_1794762545318.webp";
+import consultationLoungeImg from "@/src/assets/images/calm_consultation_lounge_1794762545595.webp";
 
 export interface CrisisHotline {
   id: string;

@@ -17,7 +17,7 @@ import {
   type InstrumentId,
 } from "@/src/data/instruments";
 import type { AppView } from "./LayoutShell";
-import consultationLoungeImg from "@/src/assets/images/calm_consultation_lounge_1794762545595.jpg";
+import consultationLoungeImg from "@/src/assets/images/calm_consultation_lounge_1794762545595.webp";
 
 interface QuestionnaireViewProps {
   instrumentId: InstrumentId;
