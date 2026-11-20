@@ -341,7 +341,7 @@ export function HomeView({ onNavigate, onStartInstrument }: HomeViewProps) {
                     Uncompromising Privacy
                   </h3>
                   <p className="text-sm text-on-surface-variant leading-relaxed">
-                    Zero third-party telemetry, no ad pixels, and strict local sandboxing. Your screening indicators stay in your browser session and are never sold or shared externally.
+                    Zero third-party telemetry, no ad pixels, and strict local sandboxing. Your screening results stay in your browser and are never sold. If you opt in to an AI-personalized explanation, only your scores and answer labels (no name or contact details) are sent to generate it.
                   </p>
                 </div>
               </div>

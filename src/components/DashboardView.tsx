@@ -17,6 +17,7 @@ import {
   X,
 } from "lucide-react";
 import { MediaImage } from "./MediaImage";
+import { NextStepFeedback } from "./NextStepFeedback";
 import {
   INSTRUMENTS,
   buildDeterministicExplanation,
@@ -53,6 +54,7 @@ export function DashboardView({
   onShowToast,
 }: DashboardViewProps) {
   const [aiLoading, setAiLoading] = useState(false);
+  const [showAiNotice, setShowAiNotice] = useState(false);
   const [activeArticle, setActiveArticle] = useState<ResourceArticle | null>(null);
   const [showSleepProtocolModal, setShowSleepProtocolModal] = useState(false);
 
@@ -494,7 +496,7 @@ export function DashboardView({
                 {!current.safetyTriggered && (
                   <button
                     type="button"
-                    onClick={handleGenerateAiSynthesis}
+                    onClick={() => setShowAiNotice(true)}
                     disabled={aiLoading}
                     className="no-print inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-surface-container-high hover:bg-secondary hover:text-on-secondary text-on-surface text-xs font-semibold transition-colors disabled:opacity-60"
                   >
@@ -510,6 +512,40 @@ export function DashboardView({
                 )}
               </div>
             </div>
+
+            {showAiNotice && (
+              <div
+                role="alertdialog"
+                aria-label="Before we personalize your explanation"
+                className="no-print rounded-lg bg-surface-container-low border border-outline-variant/40 p-4 space-y-3 text-sm text-on-surface-variant"
+              >
+                <p>
+                  <strong className="text-on-surface">Before you continue:</strong>{" "}
+                  personalizing sends your score, result band and answer labels to our
+                  server and an AI provider to write the explanation. Your name and
+                  contact details are never included. Everything else stays in this browser.
+                </p>
+                <div className="flex flex-wrap gap-2">
+                  <button
+                    type="button"
+                    onClick={() => {
+                      setShowAiNotice(false);
+                      handleGenerateAiSynthesis();
+                    }}
+                    className="px-3.5 py-2 rounded-lg bg-primary text-on-primary text-xs font-semibold"
+                  >
+                    Send &amp; personalize
+                  </button>
+                  <button
+                    type="button"
+                    onClick={() => setShowAiNotice(false)}
+                    className="px-3.5 py-2 rounded-lg bg-surface-container-high text-on-surface text-xs font-semibold"
+                  >
+                    Keep the standard explanation
+                  </button>
+                </div>
+              </div>
+            )}
 
             <h2 className="font-serif text-2xl md:text-3xl font-medium text-on-surface">
               Understanding Your 14-Day Trajectory
@@ -854,6 +890,8 @@ export function DashboardView({
       )}
 
       {/* Sleep Protocol Quick Modal */}
+      <NextStepFeedback assessmentId={current.id} />
+
       {showSleepProtocolModal && (
         <div
           className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-inverse-surface/60 backdrop-blur-xs no-print"

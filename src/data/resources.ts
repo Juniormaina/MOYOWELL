@@ -45,6 +45,8 @@ export interface CareProvider {
   location: string;
   feeNote: string;
   contactLabel: string;
+  /** ISO date (YYYY-MM-DD) of the last phone/in-person check, or null if never verified. */
+  verifiedOn: string | null;
 }
 
 export const CRISIS_HOTLINES: CrisisHotline[] = [
@@ -227,6 +229,7 @@ export const CARE_PROVIDERS: CareProvider[] = [
     location: "Kilimani, Nairobi",
     feeNote: "Sliding scale & NHIF/SHA partner options",
     contactLabel: "+254 718 220 410",
+    verifiedOn: null,
   },
   {
     id: "nairobi-mind-collective",
@@ -237,6 +240,7 @@ export const CARE_PROVIDERS: CareProvider[] = [
     location: "Westlands, Nairobi",
     feeNote: "Private & corporate EAP accepted",
     contactLabel: "+254 733 512 890",
+    verifiedOn: null,
   },
   {
     id: "chiromo-outpatient",
@@ -247,6 +251,7 @@ export const CARE_PROVIDERS: CareProvider[] = [
     location: "Braeside / Westlands / Bustani",
     feeNote: "Toll-free initial triage: 0800 220 000",
     contactLabel: "0800 220 000",
+    verifiedOn: null,
   },
   {
     id: "knh-youth-community",
@@ -257,6 +262,7 @@ export const CARE_PROVIDERS: CareProvider[] = [
     location: "Nationwide Virtual Access",
     feeNote: "Free / Community supported",
     contactLabel: "hello@moyowell.demo",
+    verifiedOn: null,
   },
 ];
 
