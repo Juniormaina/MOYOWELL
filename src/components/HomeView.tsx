@@ -28,7 +28,8 @@ import {
 import { MediaImage } from "./MediaImage";
 import type { AppView } from "./LayoutShell";
 import type { InstrumentId } from "@/src/data/instruments";
-import teaJournalImg from "@/src/assets/images/tea_journal_still_life_1794762544818.jpg";
+import teaJournalImg from "@/src/assets/images/tea_journal_still_life_1794762544818.webp";
+import heroReflectionImg from "@/src/assets/images/hero_reflection.webp";
 
 interface HomeViewProps {
   onNavigate: (view: AppView) => void;
@@ -192,7 +193,8 @@ export function HomeView({ onNavigate, onStartInstrument }: HomeViewProps) {
               <div className="relative bg-surface-container-lowest p-3 rounded-xl shadow-md border border-on-surface/[0.06]">
                 <div className="relative rounded-lg overflow-hidden aspect-[4/5] bg-surface-container">
                   <MediaImage
-                    src="/assets/aistudio/screen_ed028b72.png"
+                    src={heroReflectionImg}
+                    priority
                     alt="Woman in an olive linen shirt relaxing with a journal and tea in a sunlit room filled with botanical plants"
                     className="w-full h-full object-cover"
                     fallbackTitle="Restorative Reflection"

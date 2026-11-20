@@ -25,7 +25,7 @@ import {
 } from "@/src/data/instruments";
 import { RESOURCE_ARTICLES, type ResourceArticle } from "@/src/data/resources";
 import type { AppView } from "./LayoutShell";
-import sanctuaryPalmImg from "@/src/assets/images/sanctuary_pottery_palm_1794762544492.jpg";
+import sanctuaryPalmImg from "@/src/assets/images/sanctuary_pottery_palm_1794762544492.webp";
 
 interface DashboardViewProps {
   assessments: CompletedAssessment[];

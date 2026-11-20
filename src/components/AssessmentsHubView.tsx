@@ -15,8 +15,8 @@ import {
 import { MediaImage } from "./MediaImage";
 import { INSTRUMENTS, type InstrumentId, type InstrumentCategory } from "@/src/data/instruments";
 import type { AppView } from "./LayoutShell";
-import sanctuaryPalmImg from "@/src/assets/images/sanctuary_pottery_palm_1794762544492.jpg";
-import botanicalFernsImg from "@/src/assets/images/botanical_ferns_courtyard_1794762545318.jpg";
+import sanctuaryPalmImg from "@/src/assets/images/sanctuary_pottery_palm_1794762544492.webp";
+import botanicalFernsImg from "@/src/assets/images/botanical_ferns_courtyard_1794762545318.webp";
 
 interface AssessmentsHubViewProps {
   consentAccepted: boolean;

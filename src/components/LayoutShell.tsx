@@ -11,9 +11,10 @@ import {
   Lock,
   AlertCircle,
   Sparkles,
+  LogIn,
 } from "lucide-react";
 import { MoyoWellLogo, MediaImage } from "./MediaImage";
-import aminaAvatar from "@/src/assets/images/avatar_amina_k_1794762546361.jpg";
+import aminaAvatar from "@/src/assets/images/avatar_amina_k_1794762546361.webp";
 
 export type AppView =
   | "home"
@@ -22,7 +23,8 @@ export type AppView =
   | "dashboard"
   | "action-plan"
   | "resources"
-  | "crisis";
+  | "crisis"
+  | "login";
 
 interface NavigationProps {
   currentView: AppView;
@@ -96,6 +98,15 @@ export function PublicLayout({
           <div className="flex items-center gap-3 shrink-0">
             <button
               type="button"
+              onClick={() => handleNav("login")}
+              aria-current={currentView === "login" ? "page" : undefined}
+              className="hidden sm:inline-flex items-center gap-2 px-3.5 py-2 rounded-lg text-xs font-semibold tracking-wide text-on-surface border border-outline-variant hover:bg-surface-container transition-colors whitespace-nowrap focus-visible:outline-2 focus-visible:outline-primary"
+            >
+              <LogIn className="w-4 h-4" />
+              Log in
+            </button>
+            <button
+              type="button"
               onClick={() => handleNav("crisis")}
               className="inline-flex items-center gap-2 bg-error-container text-on-error-container hover:bg-error hover:text-on-error px-4 py-2 rounded-lg text-xs font-semibold tracking-wide transition-colors whitespace-nowrap shrink-0 shadow-xs focus-visible:outline-2 focus-visible:outline-error"
             >
@@ -138,6 +149,13 @@ export function PublicLayout({
                 </button>
               );
             })}
+            <button
+              type="button"
+              onClick={() => handleNav("login")}
+              className="block w-full text-left px-3 py-2.5 rounded-lg text-sm font-semibold text-on-surface hover:bg-surface-container-high"
+            >
+              Log in
+            </button>
           </div>
         )}
       </header>

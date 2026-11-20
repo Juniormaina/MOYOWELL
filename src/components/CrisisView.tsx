@@ -18,7 +18,7 @@ import {
 } from "lucide-react";
 import { MediaImage } from "./MediaImage";
 import { CRISIS_HOTLINES, GROUNDING_STEPS } from "@/src/data/resources";
-import botanicalFernsImg from "@/src/assets/images/botanical_ferns_courtyard_1794762545318.jpg";
+import botanicalFernsImg from "@/src/assets/images/botanical_ferns_courtyard_1794762545318.webp";
 
 interface CrisisViewProps {
   onGoBack: () => void;

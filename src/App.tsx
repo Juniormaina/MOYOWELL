@@ -1,15 +1,30 @@
-import { useEffect, useState } from "react";
+import { lazy, Suspense, useEffect, useState, useTransition } from "react";
 import { CheckCircle2 } from "lucide-react";
 import { PublicLayout, PortalLayout, type AppView } from "./components/LayoutShell";
 import { HomeView } from "./components/HomeView";
-import { AssessmentsHubView } from "./components/AssessmentsHubView";
-import { QuestionnaireView } from "./components/QuestionnaireView";
-import { DashboardView } from "./components/DashboardView";
-import {
-  ActionPathwayView,
-  ResourcesView,
-} from "./components/ActionAndResourcesViews";
-import { CrisisView } from "./components/CrisisView";
+import { LoginView } from "./components/LoginView";
+import { PageLoader, RouteProgressBar } from "./components/PageLoader";
+
+// Heavier screens are code-split so the first load stays small and slow
+// connections get a loading state instead of a frozen page.
+const AssessmentsHubView = lazy(() =>
+  import("./components/AssessmentsHubView").then((m) => ({ default: m.AssessmentsHubView }))
+);
+const QuestionnaireView = lazy(() =>
+  import("./components/QuestionnaireView").then((m) => ({ default: m.QuestionnaireView }))
+);
+const DashboardView = lazy(() =>
+  import("./components/DashboardView").then((m) => ({ default: m.DashboardView }))
+);
+const ActionPathwayView = lazy(() =>
+  import("./components/ActionAndResourcesViews").then((m) => ({ default: m.ActionPathwayView }))
+);
+const ResourcesView = lazy(() =>
+  import("./components/ActionAndResourcesViews").then((m) => ({ default: m.ResourcesView }))
+);
+const CrisisView = lazy(() =>
+  import("./components/CrisisView").then((m) => ({ default: m.CrisisView }))
+);
 import {
   INSTRUMENTS,
   INITIAL_DEMO_ASSESSMENTS,
@@ -31,6 +46,7 @@ function readStorage<T>(key: string, fallback: T): T {
 
 export default function App() {
   const [view, setView] = useState<AppView>("home");
+  const [isNavigating, startNavigation] = useTransition();
   const [previousView, setPreviousView] = useState<AppView>("home");
 
   const [consentAccepted, setConsentAccepted] = useState<boolean>(() =>
@@ -107,7 +123,9 @@ export default function App() {
   const navigate = (nextView: AppView) => {
     if (nextView !== view) {
       setPreviousView(view);
-      setView(nextView);
+      // Transition keeps the current page visible (with a progress bar) until
+      // the next page's code has loaded.
+      startNavigation(() => setView(nextView));
       window.scrollTo({ top: 0, behavior: "smooth" });
     }
   };
@@ -207,6 +225,14 @@ export default function App() {
     Array(INSTRUMENTS[activeInstrument].itemCount).fill(null);
 
   const renderContent = () => {
+    if (view === "login") {
+      return (
+        <PublicLayout currentView={view} onNavigate={navigate}>
+          <LoginView onNavigate={navigate} />
+        </PublicLayout>
+      );
+    }
+
     if (view === "crisis") {
       return (
         <CrisisView
@@ -284,7 +310,8 @@ export default function App() {
 
   return (
     <>
-      {renderContent()}
+      <RouteProgressBar active={isNavigating} />
+      <Suspense fallback={<PageLoader />}>{renderContent()}</Suspense>
 
       {/* Toast Feedback */}
       {toastMessage && (
